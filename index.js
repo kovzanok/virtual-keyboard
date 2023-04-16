@@ -1027,7 +1027,7 @@ const keyboardRowsArray = [
       name: 'AltRight',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main eng rus',
           textContent: 'Alt',
         },
       ],
@@ -1071,16 +1071,22 @@ const keyboardRowsArray = [
   ],
 ];
 
-const language = 'rus';
+let language = 'rus';
+let isShift = false;
 
 function handleLanguage(keyboardKey) {
+  const keyType=isShift?'shift':'main';
+  const engKeys = keyboardKey.querySelectorAll(`.key-${keyType}.eng`);
+  const rusKeys = keyboardKey.querySelectorAll(`.key-${keyType}.rus`);
+  const multiLangKeys = keyboardKey.querySelectorAll(`.key-${keyType}.rus.eng`);
   if (language === 'rus') {
-    const engKeys = keyboardKey.querySelectorAll('.eng');
     engKeys.forEach((engKey) => engKey.classList.add('hidden'));
-
-    const rusKeys = keyboardKey.querySelectorAll('.key-main.rus');
     rusKeys.forEach((rusKey) => rusKey.classList.remove('hidden'));
+  } else {
+    engKeys.forEach((engKey) => engKey.classList.remove('hidden'));
+    rusKeys.forEach((rusKey) => rusKey.classList.add('hidden'));
   }
+  multiLangKeys.forEach((key) => key.classList.remove('hidden'));
 }
 
 function renderKeyboardKey(keyboardKeyObj) {
@@ -1178,11 +1184,26 @@ function handleShift(direction) {
   });
 }
 
+function toggleLanguage() {
+  if (language === 'rus') {
+    language = 'eng';
+  } else {
+    language = 'rus';
+  }
+}
+
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
   pressedButton.classList.add('pressed');
   if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+    isShift = true;
     handleShift('shift');
+  } else if (e.ctrlKey && e.altKey) {
+    toggleLanguage();
+    const keyboardKeys = document.querySelectorAll('.keyboard-key');
+    keyboardKeys.forEach((keyboardKey) => {
+      handleLanguage(keyboardKey);
+    });
   }
 }
 
@@ -1190,6 +1211,7 @@ function keyupHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
   pressedButton.classList.remove('pressed');
   if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+    isShift = false;
     handleShift('main');
   }
 }
