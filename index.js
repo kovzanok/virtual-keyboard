@@ -25,11 +25,11 @@ const keyboardRowsArray = [
       name: 'Digit1',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '1',
         },
         {
-          elementClassName: 'key-shift hidden',
+          elementClassName: 'key-shift eng rus hidden',
           textContent: '!',
         },
       ],
@@ -38,7 +38,7 @@ const keyboardRowsArray = [
       name: 'Digit2',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '2',
         },
         {
@@ -55,7 +55,7 @@ const keyboardRowsArray = [
       name: 'Digit3',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '3',
         },
         {
@@ -72,7 +72,7 @@ const keyboardRowsArray = [
       name: 'Digit4',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '4',
         },
         {
@@ -89,11 +89,11 @@ const keyboardRowsArray = [
       name: 'Digit5',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '5',
         },
         {
-          elementClassName: 'key-shift hidden',
+          elementClassName: 'key-shift eng rus hidden',
           textContent: '%',
         },
       ],
@@ -102,7 +102,7 @@ const keyboardRowsArray = [
       name: 'Digit6',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '6',
         },
         {
@@ -119,7 +119,7 @@ const keyboardRowsArray = [
       name: 'Digit7',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '7',
         },
         {
@@ -136,11 +136,11 @@ const keyboardRowsArray = [
       name: 'Digit8',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '8',
         },
         {
-          elementClassName: 'key-shift hidden',
+          elementClassName: 'key-shift eng rus hidden',
           textContent: '*',
         },
       ],
@@ -149,11 +149,11 @@ const keyboardRowsArray = [
       name: 'Digit9',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '9',
         },
         {
-          elementClassName: 'key-shift hidden',
+          elementClassName: 'key-shift eng rus hidden',
           textContent: '(',
         },
       ],
@@ -162,11 +162,11 @@ const keyboardRowsArray = [
       name: 'Digit0',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '0',
         },
         {
-          elementClassName: 'key-shift hidden',
+          elementClassName: 'key-shift eng rus hidden',
           textContent: ')',
         },
       ],
@@ -175,11 +175,11 @@ const keyboardRowsArray = [
       name: 'Minus',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '-',
         },
         {
-          elementClassName: 'key-shift hidden',
+          elementClassName: 'key-shift eng rus hidden',
           textContent: '_',
         },
       ],
@@ -188,11 +188,11 @@ const keyboardRowsArray = [
       name: 'Equal',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '=',
         },
         {
-          elementClassName: 'key-shift hidden',
+          elementClassName: 'key-shift eng rus hidden',
           textContent: '+',
         },
       ],
@@ -201,7 +201,7 @@ const keyboardRowsArray = [
       name: 'Backspace',
       keyInnerElements: [
         {
-          elementClassName: 'key-main ',
+          elementClassName: 'key-main eng rus',
           textContent: '← Backspace',
         },
       ],
@@ -212,7 +212,7 @@ const keyboardRowsArray = [
       name: 'Tab',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: 'Tab ↹',
         },
       ],
@@ -473,7 +473,7 @@ const keyboardRowsArray = [
       name: 'Backslash',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '\\',
         },
         {
@@ -490,7 +490,7 @@ const keyboardRowsArray = [
       name: 'Delete',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: 'Delete',
         },
       ],
@@ -501,7 +501,7 @@ const keyboardRowsArray = [
       name: 'CapsLock',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: 'Caps Lock',
         },
       ],
@@ -721,7 +721,7 @@ const keyboardRowsArray = [
       keyInnerElements: [
         {
           elementClassName: 'key-main eng',
-          textContent: '\'',
+          textContent: "'",
         },
         {
           elementClassName: 'key-shift eng hidden',
@@ -741,7 +741,7 @@ const keyboardRowsArray = [
       name: 'Enter',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '↵ Enter',
         },
       ],
@@ -752,7 +752,7 @@ const keyboardRowsArray = [
       name: 'ShiftLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '⇧ Shift',
         },
       ],
@@ -971,7 +971,7 @@ const keyboardRowsArray = [
       name: 'ArrowUp',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '↑',
         },
       ],
@@ -980,7 +980,7 @@ const keyboardRowsArray = [
       name: 'ShiftRight',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '⇧ Shift',
         },
       ],
@@ -991,7 +991,7 @@ const keyboardRowsArray = [
       name: 'ControlLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: 'Ctrl',
         },
       ],
@@ -1000,7 +1000,7 @@ const keyboardRowsArray = [
       name: 'MetaLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: 'Win',
         },
       ],
@@ -1009,7 +1009,7 @@ const keyboardRowsArray = [
       name: 'AltLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: 'Alt',
         },
       ],
@@ -1018,7 +1018,7 @@ const keyboardRowsArray = [
       name: 'Space',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '',
         },
       ],
@@ -1036,7 +1036,7 @@ const keyboardRowsArray = [
       name: 'ArrowLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '←',
         },
       ],
@@ -1045,7 +1045,7 @@ const keyboardRowsArray = [
       name: 'ArrowDown',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '↓',
         },
       ],
@@ -1054,7 +1054,7 @@ const keyboardRowsArray = [
       name: 'ArrowRight',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: '→',
         },
       ],
@@ -1063,13 +1063,25 @@ const keyboardRowsArray = [
       name: 'ControlRight',
       keyInnerElements: [
         {
-          elementClassName: 'key-main',
+          elementClassName: 'key-main eng rus',
           textContent: 'Ctrl',
         },
       ],
     },
   ],
 ];
+
+const language = 'rus';
+
+function handleLanguage(keyboardKey) {
+  if (language === 'rus') {
+    const engKeys = keyboardKey.querySelectorAll('.eng');
+    engKeys.forEach((engKey) => engKey.classList.add('hidden'));
+
+    const rusKeys = keyboardKey.querySelectorAll('.key-main.rus');
+    rusKeys.forEach((rusKey) => rusKey.classList.remove('hidden'));
+  }
+}
 
 function renderKeyboardKey(keyboardKeyObj) {
   const keyboardKey = document.createElement('div');
@@ -1082,7 +1094,7 @@ function renderKeyboardKey(keyboardKeyObj) {
 
     keyboardKey.append(charElement);
   });
-
+  handleLanguage(keyboardKey);
   return keyboardKey;
 }
 
@@ -1136,7 +1148,10 @@ function renderInfo() {
   const info = document.createElement('div');
   info.className = 'info';
 
-  const infoTextArr = ['Клавиатура создана для Windows OS', 'Для смены языка используйте Ctrl+Alt'];
+  const infoTextArr = [
+    'Клавиатура создана для Windows OS',
+    'Для смены языка используйте Ctrl+Alt',
+  ];
   infoTextArr.forEach((infoText) => {
     const paragraph = document.createElement('p');
     paragraph.textContent = infoText;
@@ -1146,6 +1161,39 @@ function renderInfo() {
   return info;
 }
 
+function hideKeys(keyShift, direction) {
+  const removedType = direction === 'main' ? 'shift' : 'main';
+  const keyboardKey = keyShift.closest('.keyboard-key');
+  const keyMain = keyboardKey.querySelector(`.key-${removedType}.${language}`);
+  if (keyMain) {
+    keyMain.classList.add('hidden');
+  }
+}
+
+function handleShift(direction) {
+  const keysShift = document.querySelectorAll(`.key-${direction}.${language}`);
+  keysShift.forEach((keyShift) => {
+    keyShift.classList.remove('hidden');
+    hideKeys(keyShift, direction);
+  });
+}
+
+function keydownHandler(e) {
+  const pressedButton = document.querySelector(`.${e.code}`);
+  pressedButton.classList.add('pressed');
+  if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+    handleShift('shift');
+  }
+}
+
+function keyupHandler(e) {
+  const pressedButton = document.querySelector(`.${e.code}`);
+  pressedButton.classList.remove('pressed');
+  if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+    handleShift('main');
+  }
+}
+
 const container = renderContainer();
 const title = renderTitle();
 const textArea = renderTextArea();
@@ -1153,5 +1201,7 @@ const keyboard = renderKeyboard();
 const info = renderInfo();
 
 container.append(title, textArea, keyboard, info);
-
 document.body.prepend(container);
+
+document.addEventListener('keydown', keydownHandler);
+document.addEventListener('keyup', keyupHandler);
