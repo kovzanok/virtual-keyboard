@@ -460,11 +460,11 @@ const keyboardRowsArray = [
           textContent: '}',
         },
         {
-          elementClassName: 'key-main not-letter caps rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ъ',
         },
         {
-          elementClassName: 'key-shift not-letter caps rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ъ',
         },
       ],
@@ -1075,19 +1075,58 @@ let language = 'rus';
 let isShift = false;
 let isCaps = false;
 
-function handleLanguage(keyboardKey) {
-  const keyType = isShift ? 'shift' : 'main';
-  const engKeys = keyboardKey.querySelectorAll(`.key-${keyType}.eng`);
-  const rusKeys = keyboardKey.querySelectorAll(`.key-${keyType}.rus`);
-  const multiLangKeys = keyboardKey.querySelectorAll(`.key-${keyType}.rus.eng`);
-  if (language === 'rus') {
-    engKeys.forEach((engKey) => engKey.classList.add('hidden'));
-    rusKeys.forEach((rusKey) => rusKey.classList.remove('hidden'));
-  } else {
-    engKeys.forEach((engKey) => engKey.classList.remove('hidden'));
-    rusKeys.forEach((rusKey) => rusKey.classList.add('hidden'));
+function reverse(direction) {
+  if (direction === 'shift') {
+    return 'main';
   }
-  multiLangKeys.forEach((key) => key.classList.remove('hidden'));
+  return 'shift';
+}
+
+function hidePrevious(keyboardKey) {
+  const children = [...keyboardKey.children];
+  const previous = children.find((child) => !child.classList.contains('hidden'));
+  if (previous) {
+    previous.classList.add('hidden');
+  }
+}
+
+function handleLanguageWithCaps(keyboardKey) {
+  if (keyboardKey.children.length === 1) {
+    return;
+  }
+  const keyType = isShift !== isCaps ? 'shift' : 'main';
+  const notLetterType = isShift ? 'shift' : 'main';
+  hidePrevious(keyboardKey);
+  const letter = keyboardKey.querySelector(`.key-${keyType}.caps.${language}`);
+  if (letter) {
+    letter.classList.remove('hidden');
+  } else {
+    const notLetter = keyboardKey.querySelector(`.key-${notLetterType}.not-letter.${language}`);
+    if (notLetter) {
+      notLetter.classList.remove('hidden');
+    }
+  }
+}
+
+function handleLanguage(keyboardKey) {
+  if (isCaps) {
+    handleLanguageWithCaps(keyboardKey);
+  } else {
+    const keyType = isShift ? 'shift' : 'main';
+    const engKeys = keyboardKey.querySelectorAll(`.key-${keyType}.eng`);
+    const rusKeys = keyboardKey.querySelectorAll(`.key-${keyType}.rus`);
+    const multiLangKeys = keyboardKey.querySelectorAll(
+      `.key-${keyType}.rus.eng`,
+    );
+    if (language === 'rus') {
+      engKeys.forEach((engKey) => engKey.classList.add('hidden'));
+      rusKeys.forEach((rusKey) => rusKey.classList.remove('hidden'));
+    } else {
+      engKeys.forEach((engKey) => engKey.classList.remove('hidden'));
+      rusKeys.forEach((rusKey) => rusKey.classList.add('hidden'));
+    }
+    multiLangKeys.forEach((key) => key.classList.remove('hidden'));
+  }
 }
 
 function renderKeyboardKey(keyboardKeyObj) {
@@ -1188,18 +1227,15 @@ function handleCaps() {
   });
 }
 
-function reverse(direction) {
-  if (direction === 'shift') {
-    return 'main';
-  }
-  return 'shift';
-}
-
 function handleShift(direction) {
   if (isCaps) {
     const newDirection = reverse(direction);
-    const keysShift = document.querySelectorAll(`.key-${newDirection}.caps.${language}`);
-    const keysNotLetter = document.querySelectorAll(`.key-${direction}.not-letter.${language}`);
+    const keysShift = document.querySelectorAll(
+      `.key-${newDirection}.caps.${language}`,
+    );
+    const keysNotLetter = document.querySelectorAll(
+      `.key-${direction}.not-letter.${language}`,
+    );
     keysNotLetter.forEach((keyShift) => {
       keyShift.classList.remove('hidden');
       hideKeys(keyShift, direction);
@@ -1209,7 +1245,9 @@ function handleShift(direction) {
       hideKeys(keyShift, newDirection);
     });
   } else {
-    const keysShift = document.querySelectorAll(`.key-${direction}.${language}`);
+    const keysShift = document.querySelectorAll(
+      `.key-${direction}.${language}`,
+    );
     keysShift.forEach((keyShift) => {
       keyShift.classList.remove('hidden');
       hideKeys(keyShift, direction);
