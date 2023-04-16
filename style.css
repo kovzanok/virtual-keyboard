@@ -2,14 +2,38 @@ html {
   font-size: 10px;
 }
 
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body {
+  margin: 0;
+  background-image: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.textarea {
+  width: 1000px;
+  height: 200px;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  resize: none;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgb(36, 35, 35);
+}
 
 .keyboard {
   display: flex;
@@ -20,6 +44,20 @@ html {
   border: 5px solid black;
   border-radius: 25px;
   padding: 20px;
+}
+
+.info {
+  border-radius: 10px;
+  font-size: 2rem;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  color: white;
+}
+
+.info > * {
+  margin: 0;
 }
 
 .keyboard-row {
@@ -38,7 +76,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 0px 0px 2px rgba(255,0,0,0.82);
+  box-shadow: 0px 0px 0px 2px rgba(255, 0, 0, 0.82);
   font-size: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -49,8 +87,8 @@ html {
 }
 
 .Backspace {
-    width: 130px;
-    border-radius: 25px;
+  width: 130px;
+  border-radius: 25px;
 }
 
 .Tab {
@@ -100,13 +138,11 @@ html {
   border-radius: 25px;
 }
 
-
-
 .Space {
   width: 410px;
   border-radius: 25px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
