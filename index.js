@@ -1227,7 +1227,9 @@ function toggleLanguage() {
 
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
-  pressedButton.classList.add('pressed');
+  if (pressedButton) {
+    pressedButton.classList.add('pressed');
+  }
   if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
     isShift = true;
     handleShift('shift');
@@ -1250,7 +1252,9 @@ function keydownHandler(e) {
 
 function keyupHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
-  pressedButton.classList.remove('pressed');
+  if (pressedButton) {
+    pressedButton.classList.remove('pressed');
+  }
   if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
     isShift = false;
     handleShift('main');
