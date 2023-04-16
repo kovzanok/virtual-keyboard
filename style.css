@@ -38,12 +38,12 @@ html {
   font-size: 2rem;
 }
 
-.keyBackspace {
+.Backspace {
     width: 130px;
     border-radius: 25px;
 }
 
-.keyTab {
+.Tab {
   width: 100px;
   border-radius: 25px;
 }
