@@ -1125,6 +1125,7 @@ function renderTitle() {
 
 function renderTextArea() {
   const textArea = document.createElement('textarea');
+  textArea.className = 'textarea';
   textArea.cols = 30;
   textArea.rows = 10;
 
