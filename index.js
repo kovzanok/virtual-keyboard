@@ -4,11 +4,11 @@ const keyboardRowsArray = [
       name: 'Backquote',
       keyInnerElements: [
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ё',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ё',
         },
         {
@@ -221,19 +221,19 @@ const keyboardRowsArray = [
       name: 'KeyQ',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'q',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'Q',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'й',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Й',
         },
       ],
@@ -242,19 +242,19 @@ const keyboardRowsArray = [
       name: 'KeyW',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'w',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'W',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ц',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ц',
         },
       ],
@@ -263,19 +263,19 @@ const keyboardRowsArray = [
       name: 'KeyE',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'e',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'E',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'у',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'У',
         },
       ],
@@ -284,19 +284,19 @@ const keyboardRowsArray = [
       name: 'KeyR',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'r',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'R',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'к',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'К',
         },
       ],
@@ -305,19 +305,19 @@ const keyboardRowsArray = [
       name: 'KeyT',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 't',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'T',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'е',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Е',
         },
       ],
@@ -326,19 +326,19 @@ const keyboardRowsArray = [
       name: 'KeyY',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'y',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'Y',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'н',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Н',
         },
       ],
@@ -347,19 +347,19 @@ const keyboardRowsArray = [
       name: 'KeyU',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'u',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'U',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'г',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Г',
         },
       ],
@@ -368,19 +368,19 @@ const keyboardRowsArray = [
       name: 'KeyI',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'i',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'I',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ш',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ш',
         },
       ],
@@ -389,19 +389,19 @@ const keyboardRowsArray = [
       name: 'KeyO',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'o',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'O',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'щ',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Щ',
         },
       ],
@@ -410,19 +410,19 @@ const keyboardRowsArray = [
       name: 'KeyP',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'p',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'P',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'з',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'З',
         },
       ],
@@ -439,11 +439,11 @@ const keyboardRowsArray = [
           textContent: '{',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'х',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Х',
         },
       ],
@@ -460,11 +460,11 @@ const keyboardRowsArray = [
           textContent: '}',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ъ',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ъ',
         },
       ],
@@ -510,19 +510,19 @@ const keyboardRowsArray = [
       name: 'KeyA',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'a',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'A',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ф',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ф',
         },
       ],
@@ -531,19 +531,19 @@ const keyboardRowsArray = [
       name: 'KeyS',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 's',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'S',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ы',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ы',
         },
       ],
@@ -552,19 +552,19 @@ const keyboardRowsArray = [
       name: 'KeyD',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'd',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'D',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'в',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'В',
         },
       ],
@@ -573,19 +573,19 @@ const keyboardRowsArray = [
       name: 'KeyF',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'f',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'F',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'а',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'А',
         },
       ],
@@ -594,19 +594,19 @@ const keyboardRowsArray = [
       name: 'KeyG',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'g',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'G',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'п',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'П',
         },
       ],
@@ -615,19 +615,19 @@ const keyboardRowsArray = [
       name: 'KeyH',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'h',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'H',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'р',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Р',
         },
       ],
@@ -636,19 +636,19 @@ const keyboardRowsArray = [
       name: 'KeyJ',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'j',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'J',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'о',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'О',
         },
       ],
@@ -657,19 +657,19 @@ const keyboardRowsArray = [
       name: 'KeyK',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'k',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'K',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'л',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Л',
         },
       ],
@@ -678,19 +678,19 @@ const keyboardRowsArray = [
       name: 'KeyL',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'l',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'L',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'д',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Д',
         },
       ],
@@ -707,11 +707,11 @@ const keyboardRowsArray = [
           textContent: ':',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ж',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ж',
         },
       ],
@@ -728,11 +728,11 @@ const keyboardRowsArray = [
           textContent: '"',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'э',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Э',
         },
       ],
@@ -761,19 +761,19 @@ const keyboardRowsArray = [
       name: 'KeyZ',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'z',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'Z',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'я',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Я',
         },
       ],
@@ -782,19 +782,19 @@ const keyboardRowsArray = [
       name: 'KeyX',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'x',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'X',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ч',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ч',
         },
       ],
@@ -803,19 +803,19 @@ const keyboardRowsArray = [
       name: 'KeyC',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'c',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'C',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'с',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'С',
         },
       ],
@@ -824,19 +824,19 @@ const keyboardRowsArray = [
       name: 'KeyV',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'v',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'V',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'м',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'М',
         },
       ],
@@ -845,19 +845,19 @@ const keyboardRowsArray = [
       name: 'KeyB',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'b',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'B',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'и',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'И',
         },
       ],
@@ -866,19 +866,19 @@ const keyboardRowsArray = [
       name: 'KeyN',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'n',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'N',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'т',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Т',
         },
       ],
@@ -887,19 +887,19 @@ const keyboardRowsArray = [
       name: 'KeyM',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng',
+          elementClassName: 'key-main caps eng',
           textContent: 'm',
         },
         {
-          elementClassName: 'key-shift eng hidden',
+          elementClassName: 'key-shift caps eng hidden',
           textContent: 'M',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ь',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ь',
         },
       ],
@@ -916,11 +916,11 @@ const keyboardRowsArray = [
           textContent: '<',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'б',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Б',
         },
       ],
@@ -937,11 +937,11 @@ const keyboardRowsArray = [
           textContent: '>',
         },
         {
-          elementClassName: 'key-main rus hidden',
+          elementClassName: 'key-main caps rus hidden',
           textContent: 'ю',
         },
         {
-          elementClassName: 'key-shift rus hidden',
+          elementClassName: 'key-shift caps rus hidden',
           textContent: 'Ю',
         },
       ],
@@ -1073,9 +1073,10 @@ const keyboardRowsArray = [
 
 let language = 'rus';
 let isShift = false;
+let isCaps = false;
 
 function handleLanguage(keyboardKey) {
-  const keyType=isShift?'shift':'main';
+  const keyType = isShift ? 'shift' : 'main';
   const engKeys = keyboardKey.querySelectorAll(`.key-${keyType}.eng`);
   const rusKeys = keyboardKey.querySelectorAll(`.key-${keyType}.rus`);
   const multiLangKeys = keyboardKey.querySelectorAll(`.key-${keyType}.rus.eng`);
@@ -1192,6 +1193,17 @@ function toggleLanguage() {
   }
 }
 
+function handleCaps() {
+  const keysCaps = document.querySelectorAll(`.caps.${language}`);
+  keysCaps.forEach((keyCaps) => {
+    if (keyCaps.classList.contains('hidden')) {
+      keyCaps.classList.remove('hidden');
+    } else {
+      keyCaps.classList.add('hidden');
+    }
+  });
+}
+
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
   pressedButton.classList.add('pressed');
@@ -1204,6 +1216,14 @@ function keydownHandler(e) {
     keyboardKeys.forEach((keyboardKey) => {
       handleLanguage(keyboardKey);
     });
+  } else if (e.code === 'CapsLock') {
+    if (!isCaps) {
+      isCaps = true;
+      handleCaps();
+    } else {
+      isCaps = false;
+      handleCaps();
+    }
   }
 }
 
@@ -1213,6 +1233,10 @@ function keyupHandler(e) {
   if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
     isShift = false;
     handleShift('main');
+  } else if (e.code === 'CapsLock') {
+    if (isCaps) {
+      pressedButton.classList.add('pressed');
+    }
   }
 }
 
