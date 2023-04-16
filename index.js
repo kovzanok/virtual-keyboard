@@ -1108,7 +1108,49 @@ function renderKeyboard() {
   return keyboard;
 }
 
-const container = document.querySelector('.container');
-const keyboard = renderKeyboard();
+function renderContainer() {
+  const container = document.createElement('div');
+  container.className = 'container';
 
-container.append(keyboard);
+  return container;
+}
+
+function renderTitle() {
+  const title = document.createElement('h1');
+  title.className = 'title';
+  title.textContent = 'Virtual Keyboard';
+
+  return title;
+}
+
+function renderTextArea() {
+  const textArea = document.createElement('textarea');
+  textArea.cols = 30;
+  textArea.rows = 10;
+
+  return textArea;
+}
+
+function renderInfo() {
+  const info = document.createElement('div');
+  info.className = 'info';
+
+  const infoTextArr = ['Клавиатура создана для Windows OS', 'Для смены языка используйте Ctrl+Alt'];
+  infoTextArr.forEach((infoText) => {
+    const paragraph = document.createElement('p');
+    paragraph.textContent = infoText;
+    info.append(paragraph);
+  });
+
+  return info;
+}
+
+const container = renderContainer();
+const title = renderTitle();
+const textArea = renderTextArea();
+const keyboard = renderKeyboard();
+const info = renderInfo();
+
+container.append(title, textArea, keyboard, info);
+
+document.body.prepend(container);
