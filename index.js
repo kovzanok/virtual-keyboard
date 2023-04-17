@@ -490,7 +490,7 @@ const keyboardRowsArray = [
       name: 'Delete',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Delete',
         },
       ],
@@ -1297,6 +1297,24 @@ function insertChar(pressedButton) {
   textArea.value = insertSubstringIntoString(char, textArea.value, cursorPosition);
 }
 
+function removeChar(direction) {
+  const textAreaValueArr = textArea.value.split('');
+  if (direction === 'Backspace') {
+    if (cursorPosition !== 0) {
+      textAreaValueArr.splice(cursorPosition - 1, 1);
+      cursorPosition -= 1;
+      textArea.value = textAreaValueArr.join('');
+      textArea.selectionStart = cursorPosition;
+      textArea.selectionEnd = cursorPosition;
+    }
+  } else if (cursorPosition !== textArea.value.length) {
+    textAreaValueArr.splice(cursorPosition, 1);
+    textArea.value = textAreaValueArr.join('');
+    textArea.selectionStart = cursorPosition;
+    textArea.selectionEnd = cursorPosition;
+  }
+}
+
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
   const textAreaInputEvent = new Event('textAreaInput');
@@ -1334,6 +1352,8 @@ function keydownHandler(e) {
     } else if (e.code === 'Space') {
       textArea.value = insertSubstringIntoString(' ', textArea.value, cursorPosition);
       textArea.dispatchEvent(textAreaInputEvent);
+    } else if (e.code === 'Backspace' || e.code === 'Delete') {
+      removeChar(e.code);
     }
   }
 }
@@ -1385,4 +1405,4 @@ textArea.addEventListener('textAreaInput', () => {
 textArea.onclick = () => {
   cursorPosition = textArea.selectionStart;
   textArea.selectionEnd = cursorPosition;
-}
+};
