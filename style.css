@@ -44,7 +44,7 @@ body {
   border: 5px solid black;
   border-radius: 25px;
   padding: 20px;
-  -webkit-user-select: none;
+  user-select: none;
 }
 
 .info {
