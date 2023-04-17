@@ -1071,7 +1071,15 @@ const keyboardRowsArray = [
   ],
 ];
 
-let language = 'rus';
+function getLanguage() {
+  const savedLanguage = window.localStorage.getItem('language');
+  if (savedLanguage) {
+    return savedLanguage;
+  }
+  return undefined;
+}
+
+let language = getLanguage() || 'eng';
 let isShift = false;
 let isCaps = false;
 
@@ -1303,6 +1311,10 @@ function keyupHandler(e) {
   }
 }
 
+function saveLanguage() {
+  window.localStorage.setItem('language', language);
+}
+
 const container = renderContainer();
 const title = renderTitle();
 const textArea = renderTextArea();
@@ -1314,3 +1326,7 @@ document.body.prepend(container);
 
 document.addEventListener('keydown', keydownHandler);
 document.addEventListener('keyup', keyupHandler);
+
+window.onunload = () => {
+  saveLanguage();
+};
