@@ -1294,7 +1294,7 @@ function insertChar(pressedButton) {
 
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
-  const isFuntional = Boolean(pressedButton.querySelector('.functional'));
+  const isFunctional = Boolean(pressedButton.querySelector('.functional'));
   e.preventDefault();
   if (pressedButton) {
     pressedButton.classList.add('pressed');
@@ -1316,7 +1316,7 @@ function keydownHandler(e) {
       isCaps = false;
       handleCaps();
     }
-  } else if (!isFuntional) {
+  } else if (!isFunctional) {
     insertChar(pressedButton);
   } else if (e.code === 'Enter') {
     textArea.value += '\n';
