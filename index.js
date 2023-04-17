@@ -1139,90 +1139,92 @@ function handleLanguage(keyboardKey) {
   }
 }
 
-function renderKeyboardKey(keyboardKeyObj) {
-  const keyboardKey = document.createElement('div');
-  keyboardKey.className = `keyboard-key ${keyboardKeyObj.name}`;
-  keyboardKey.setAttribute('data-key', keyboardKeyObj.name);
+class Renderer {
+  static renderKeyboardKey(keyboardKeyObj) {
+    const keyboardKey = document.createElement('div');
+    keyboardKey.className = `keyboard-key ${keyboardKeyObj.name}`;
+    keyboardKey.setAttribute('data-key', keyboardKeyObj.name);
 
-  keyboardKeyObj.keyInnerElements.forEach((innerElement) => {
-    const charElement = document.createElement('div');
-    charElement.className = innerElement.elementClassName;
-    charElement.textContent = innerElement.textContent;
+    keyboardKeyObj.keyInnerElements.forEach((innerElement) => {
+      const charElement = document.createElement('div');
+      charElement.className = innerElement.elementClassName;
+      charElement.textContent = innerElement.textContent;
 
-    keyboardKey.append(charElement);
-  });
-  handleLanguage(keyboardKey);
-  return keyboardKey;
+      keyboardKey.append(charElement);
+    });
+    handleLanguage(keyboardKey);
+    return keyboardKey;
+  }
+
+  static renderKeyboardRow(keyboardRowArr) {
+    const keyboardRow = document.createElement('div');
+    keyboardRow.className = 'keyboard-row';
+
+    keyboardRowArr.forEach((keyboardKey) => {
+      const keyboardKeyElement = Renderer.renderKeyboardKey(keyboardKey);
+      keyboardRow.append(keyboardKeyElement);
+    });
+    return keyboardRow;
+  }
+
+  static renderKeyboard() {
+    const keyboard = document.createElement('div');
+    keyboard.className = 'keyboard';
+    keyboardRowsArray.forEach((keyboardRowArr) => {
+      const keyboardRow = Renderer.renderKeyboardRow(keyboardRowArr);
+      keyboard.append(keyboardRow);
+    });
+
+    return keyboard;
+  }
+
+  static renderContainer() {
+    const container = document.createElement('div');
+    container.className = 'container';
+
+    return container;
+  }
+
+  static renderTitle() {
+    const title = document.createElement('h1');
+    title.className = 'title';
+    title.textContent = 'Virtual Keyboard';
+
+    return title;
+  }
+
+  static renderTextArea() {
+    const textArea = document.createElement('textarea');
+    textArea.className = 'textarea';
+    textArea.cols = 30;
+    textArea.rows = 10;
+
+    return textArea;
+  }
+
+  static renderInfo() {
+    const info = document.createElement('div');
+    info.className = 'info';
+
+    const infoTextArr = [
+      'Клавиатура создана для Windows OS',
+      'Для смены языка используйте Ctrl+Alt',
+    ];
+    infoTextArr.forEach((infoText) => {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = infoText;
+      info.append(paragraph);
+    });
+
+    return info;
+  }
 }
 
-function renderKeyboardRow(keyboardRowArr) {
-  const keyboardRow = document.createElement('div');
-  keyboardRow.className = 'keyboard-row';
-
-  keyboardRowArr.forEach((keyboardKey) => {
-    const keyboardKeyElement = renderKeyboardKey(keyboardKey);
-    keyboardRow.append(keyboardKeyElement);
-  });
-  return keyboardRow;
-}
-
-function renderKeyboard() {
-  const keyboard = document.createElement('div');
-  keyboard.className = 'keyboard';
-  keyboardRowsArray.forEach((keyboardRowArr) => {
-    const keyboardRow = renderKeyboardRow(keyboardRowArr);
-    keyboard.append(keyboardRow);
-  });
-
-  return keyboard;
-}
-
-function renderContainer() {
-  const container = document.createElement('div');
-  container.className = 'container';
-
-  return container;
-}
-
-function renderTitle() {
-  const title = document.createElement('h1');
-  title.className = 'title';
-  title.textContent = 'Virtual Keyboard';
-
-  return title;
-}
-
-function renderTextArea() {
-  const textArea = document.createElement('textarea');
-  textArea.className = 'textarea';
-  textArea.cols = 30;
-  textArea.rows = 10;
-
-  return textArea;
-}
-
-function renderInfo() {
-  const info = document.createElement('div');
-  info.className = 'info';
-
-  const infoTextArr = [
-    'Клавиатура создана для Windows OS',
-    'Для смены языка используйте Ctrl+Alt',
-  ];
-  infoTextArr.forEach((infoText) => {
-    const paragraph = document.createElement('p');
-    paragraph.textContent = infoText;
-    info.append(paragraph);
-  });
-
-  return info;
-}
-
-const container = renderContainer();
-const title = renderTitle();
-const textArea = renderTextArea();
-const keyboard = renderKeyboard();
-const info = renderInfo();
+const container = Renderer.renderContainer();
+const title = Renderer.renderTitle();
+const textArea = Renderer.renderTextArea();
+const keyboard = Renderer.renderKeyboard();
+const info = Renderer.renderInfo();
 
 container.append(title, textArea, keyboard, info);
 document.body.prepend(container);
