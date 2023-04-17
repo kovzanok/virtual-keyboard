@@ -1169,6 +1169,7 @@ class Renderer {
 
   static renderKeyboard() {
     const keyboard = document.createElement('div');
+    keyboard.draggable = false;
     keyboard.className = 'keyboard';
     keyboardRowsArray.forEach((keyboardRowArr) => {
       const keyboardRow = Renderer.renderKeyboardRow(keyboardRowArr);
@@ -1402,15 +1403,17 @@ function handleKeyboardDown(e) {
 
 function handleKeyboardUp(e) {
   const { target } = e;
-  if ((!lastClickedButton.classList.contains('CapsLock'))) {
-    lastClickedButton.classList.remove('pressed');
-  }
-  if (lastClickedButton.classList.contains('ShiftLeft') || lastClickedButton.classList.contains('ShiftRight')) {
-    buttonUpHandler(lastClickedButton.dataset.key, lastClickedButton);
-  }
-  if (target.classList.contains('keyboard-key') || target.closest('.keyboard-key')) {
-    const pressedButton = target.closest('.keyboard-key') || target;
-    buttonUpHandler(pressedButton.dataset.key, pressedButton);
+  if (lastClickedButton) {
+    if ((!lastClickedButton.classList.contains('CapsLock'))) {
+      lastClickedButton.classList.remove('pressed');
+    }
+    if (lastClickedButton.classList.contains('ShiftLeft') || lastClickedButton.classList.contains('ShiftRight')) {
+      buttonUpHandler(lastClickedButton.dataset.key, lastClickedButton);
+    }
+    if (target.classList.contains('keyboard-key') || target.closest('.keyboard-key')) {
+      const pressedButton = target.closest('.keyboard-key') || target;
+      buttonUpHandler(pressedButton.dataset.key, pressedButton);
+    }
   }
 }
 

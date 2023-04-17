@@ -58,6 +58,7 @@ body {
 }
 
 .info > * {
+  text-align: center;
   margin: 0;
 }
 
