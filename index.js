@@ -1083,6 +1083,7 @@ let language = getLanguage() || 'eng';
 let isShift = false;
 let isCaps = false;
 let cursorPosition = 0;
+let lastClickedButton;
 
 function reverse(direction) {
   if (direction === 'shift') {
@@ -1141,6 +1142,7 @@ function handleLanguage(keyboardKey) {
 function renderKeyboardKey(keyboardKeyObj) {
   const keyboardKey = document.createElement('div');
   keyboardKey.className = `keyboard-key ${keyboardKeyObj.name}`;
+  keyboardKey.setAttribute('data-key', keyboardKeyObj.name);
 
   keyboardKeyObj.keyInnerElements.forEach((innerElement) => {
     const charElement = document.createElement('div');
@@ -1315,61 +1317,68 @@ function removeChar(direction) {
   }
 }
 
+function buttonDownHandler(e, code, button) {
+  const textAreaInputEvent = new Event('textAreaInput');
+  button.classList.add('pressed');
+  const isFunctional = Boolean(button.querySelector('.functional'));
+  if (code === 'ShiftLeft' || code === 'ShiftRight') {
+    isShift = true;
+    handleShift('shift');
+  } else if (e.ctrlKey && e.altKey) {
+    toggleLanguage();
+    const keyboardKeys = document.querySelectorAll('.keyboard-key');
+    keyboardKeys.forEach((keyboardKey) => {
+      handleLanguage(keyboardKey);
+    });
+  } else if (code === 'CapsLock') {
+    if (!isCaps) {
+      isCaps = true;
+      handleCaps();
+    } else {
+      isCaps = false;
+      handleCaps();
+    }
+  } else if (!isFunctional) {
+    insertChar(button);
+    textArea.dispatchEvent(textAreaInputEvent);
+  } else if (code === 'Enter') {
+    textArea.value = insertSubstringIntoString('\n', textArea.value, cursorPosition);
+    textArea.dispatchEvent(textAreaInputEvent);
+  } else if (code === 'Tab') {
+    textArea.value = insertSubstringIntoString('\t', textArea.value, cursorPosition);
+    textArea.dispatchEvent(textAreaInputEvent);
+  } else if (code === 'Space') {
+    textArea.value = insertSubstringIntoString(' ', textArea.value, cursorPosition);
+    textArea.dispatchEvent(textAreaInputEvent);
+  } else if (code === 'Backspace' || code === 'Delete') {
+    removeChar(code);
+  }
+}
+
+function buttonUpHandler(code, button) {
+  button.classList.remove('pressed');
+  if (code === 'ShiftLeft' || code === 'ShiftRight') {
+    isShift = false;
+    handleShift('main');
+  } else if (code === 'CapsLock') {
+    if (isCaps) {
+      button.classList.add('pressed');
+    }
+  }
+}
+
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
-  const textAreaInputEvent = new Event('textAreaInput');
-
   e.preventDefault();
   if (pressedButton) {
-    pressedButton.classList.add('pressed');
-    const isFunctional = Boolean(pressedButton.querySelector('.functional'));
-    if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
-      isShift = true;
-      handleShift('shift');
-    } else if (e.ctrlKey && e.altKey) {
-      toggleLanguage();
-      const keyboardKeys = document.querySelectorAll('.keyboard-key');
-      keyboardKeys.forEach((keyboardKey) => {
-        handleLanguage(keyboardKey);
-      });
-    } else if (e.code === 'CapsLock') {
-      if (!isCaps) {
-        isCaps = true;
-        handleCaps();
-      } else {
-        isCaps = false;
-        handleCaps();
-      }
-    } else if (!isFunctional) {
-      insertChar(pressedButton);
-      textArea.dispatchEvent(textAreaInputEvent);
-    } else if (e.code === 'Enter') {
-      textArea.value = insertSubstringIntoString('\n', textArea.value, cursorPosition);
-      textArea.dispatchEvent(textAreaInputEvent);
-    } else if (e.code === 'Tab') {
-      textArea.value = insertSubstringIntoString('\t', textArea.value, cursorPosition);
-      textArea.dispatchEvent(textAreaInputEvent);
-    } else if (e.code === 'Space') {
-      textArea.value = insertSubstringIntoString(' ', textArea.value, cursorPosition);
-      textArea.dispatchEvent(textAreaInputEvent);
-    } else if (e.code === 'Backspace' || e.code === 'Delete') {
-      removeChar(e.code);
-    }
+    buttonDownHandler(e, e.code, pressedButton);
   }
 }
 
 function keyupHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
   if (pressedButton) {
-    pressedButton.classList.remove('pressed');
-  }
-  if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
-    isShift = false;
-    handleShift('main');
-  } else if (e.code === 'CapsLock') {
-    if (isCaps) {
-      pressedButton.classList.add('pressed');
-    }
+    buttonUpHandler(e.code, pressedButton);
   }
 }
 
@@ -1379,6 +1388,30 @@ function saveLanguage() {
 
 document.addEventListener('keydown', keydownHandler);
 document.addEventListener('keyup', keyupHandler);
+
+function handleKeyboardDown(e) {
+  const { target } = e;
+  if (target.classList.contains('keyboard-key') || target.closest('.keyboard-key')) {
+    const pressedButton = target.closest('.keyboard-key') || target;
+    lastClickedButton = pressedButton;
+    buttonDownHandler(e, pressedButton.dataset.key, pressedButton);
+  }
+}
+
+function handleKeyboardUp(e) {
+  const { target } = e;
+  if ((!lastClickedButton.classList.contains('CapsLock'))) {
+    lastClickedButton.classList.remove('pressed');
+  }
+
+  if (target.classList.contains('keyboard-key') || target.closest('.keyboard-key')) {
+    const pressedButton = target.closest('.keyboard-key') || target;
+    buttonUpHandler(pressedButton.dataset.key, pressedButton);
+  }
+}
+
+keyboard.addEventListener('mousedown', handleKeyboardDown);
+keyboard.addEventListener('mouseup', handleKeyboardUp);
 
 window.onunload = () => {
   saveLanguage();
