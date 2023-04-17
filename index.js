@@ -1403,7 +1403,9 @@ function handleKeyboardUp(e) {
   if ((!lastClickedButton.classList.contains('CapsLock'))) {
     lastClickedButton.classList.remove('pressed');
   }
-
+  if (lastClickedButton.classList.contains('ShiftLeft') || lastClickedButton.classList.contains('ShiftRight')) {
+    buttonUpHandler(lastClickedButton.dataset.key, lastClickedButton);
+  }
   if (target.classList.contains('keyboard-key') || target.closest('.keyboard-key')) {
     const pressedButton = target.closest('.keyboard-key') || target;
     buttonUpHandler(pressedButton.dataset.key, pressedButton);
