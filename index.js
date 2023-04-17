@@ -201,7 +201,7 @@ const keyboardRowsArray = [
       name: 'Backspace',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: '← Backspace',
         },
       ],
@@ -212,7 +212,7 @@ const keyboardRowsArray = [
       name: 'Tab',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Tab ↹',
         },
       ],
@@ -501,7 +501,7 @@ const keyboardRowsArray = [
       name: 'CapsLock',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Caps Lock',
         },
       ],
@@ -741,7 +741,7 @@ const keyboardRowsArray = [
       name: 'Enter',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: '↵ Enter',
         },
       ],
@@ -752,7 +752,7 @@ const keyboardRowsArray = [
       name: 'ShiftLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: '⇧ Shift',
         },
       ],
@@ -980,7 +980,7 @@ const keyboardRowsArray = [
       name: 'ShiftRight',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: '⇧ Shift',
         },
       ],
@@ -991,7 +991,7 @@ const keyboardRowsArray = [
       name: 'ControlLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Ctrl',
         },
       ],
@@ -1000,7 +1000,7 @@ const keyboardRowsArray = [
       name: 'MetaLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Win',
         },
       ],
@@ -1009,7 +1009,7 @@ const keyboardRowsArray = [
       name: 'AltLeft',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Alt',
         },
       ],
@@ -1018,7 +1018,7 @@ const keyboardRowsArray = [
       name: 'Space',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: '',
         },
       ],
@@ -1027,7 +1027,7 @@ const keyboardRowsArray = [
       name: 'AltRight',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Alt',
         },
       ],
@@ -1063,7 +1063,7 @@ const keyboardRowsArray = [
       name: 'ControlRight',
       keyInnerElements: [
         {
-          elementClassName: 'key-main eng rus',
+          elementClassName: 'key-main functional eng rus',
           textContent: 'Ctrl',
         },
       ],
@@ -1215,6 +1215,15 @@ function renderInfo() {
   return info;
 }
 
+const container = renderContainer();
+const title = renderTitle();
+const textArea = renderTextArea();
+const keyboard = renderKeyboard();
+const info = renderInfo();
+
+container.append(title, textArea, keyboard, info);
+document.body.prepend(container);
+
 function hideKeys(keyShift, direction) {
   const removedType = direction === 'main' ? 'shift' : 'main';
   const keyboardKey = keyShift.closest('.keyboard-key');
@@ -1271,8 +1280,22 @@ function toggleLanguage() {
   }
 }
 
+function findActiveKey(pressedButton) {
+  const children = [...pressedButton.children];
+  const activeKey = children.find((child) => !child.classList.contains('hidden'));
+  return activeKey;
+}
+
+function insertChar(pressedButton) {
+  const activeKey = findActiveKey(pressedButton);
+  const char = activeKey.textContent;
+  textArea.value += char;
+}
+
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
+  const isFuntional = Boolean(pressedButton.querySelector('.functional'));
+  e.preventDefault();
   if (pressedButton) {
     pressedButton.classList.add('pressed');
   }
@@ -1293,6 +1316,14 @@ function keydownHandler(e) {
       isCaps = false;
       handleCaps();
     }
+  } else if (!isFuntional) {
+    insertChar(pressedButton);
+  } else if (e.code === 'Enter') {
+    textArea.value += '\n';
+  } else if (e.code === 'Tab') {
+    textArea.value += '\t';
+  } else if (e.code === 'Space') {
+    textArea.value += ' ';
   }
 }
 
@@ -1314,15 +1345,6 @@ function keyupHandler(e) {
 function saveLanguage() {
   window.localStorage.setItem('language', language);
 }
-
-const container = renderContainer();
-const title = renderTitle();
-const textArea = renderTextArea();
-const keyboard = renderKeyboard();
-const info = renderInfo();
-
-container.append(title, textArea, keyboard, info);
-document.body.prepend(container);
 
 document.addEventListener('keydown', keydownHandler);
 document.addEventListener('keyup', keyupHandler);
