@@ -1208,7 +1208,7 @@ class Renderer {
 
     const infoTextArr = [
       'Клавиатура создана для Windows OS',
-      'Для смены языка используйте Ctrl+Alt',
+      'Для смены языка используйте левые Ctrl+Alt',
     ];
     infoTextArr.forEach((infoText) => {
       const paragraph = document.createElement('p');
