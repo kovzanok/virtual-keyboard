@@ -1082,6 +1082,7 @@ function getLanguage() {
 let language = getLanguage() || 'eng';
 let isShift = false;
 let isCaps = false;
+let cursorPosition = 0;
 
 function reverse(direction) {
   if (direction === 'shift') {
@@ -1286,44 +1287,54 @@ function findActiveKey(pressedButton) {
   return activeKey;
 }
 
+function insertSubstringIntoString(substring, string, position) {
+  return string.slice(0, position) + substring + string.slice(position);
+}
+
 function insertChar(pressedButton) {
   const activeKey = findActiveKey(pressedButton);
   const char = activeKey.textContent;
-  textArea.value += char;
+  textArea.value = insertSubstringIntoString(char, textArea.value, cursorPosition);
 }
 
 function keydownHandler(e) {
   const pressedButton = document.querySelector(`.${e.code}`);
-  const isFunctional = Boolean(pressedButton.querySelector('.functional'));
+  const textAreaInputEvent = new Event('textAreaInput');
+
   e.preventDefault();
   if (pressedButton) {
     pressedButton.classList.add('pressed');
-  }
-  if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
-    isShift = true;
-    handleShift('shift');
-  } else if (e.ctrlKey && e.altKey) {
-    toggleLanguage();
-    const keyboardKeys = document.querySelectorAll('.keyboard-key');
-    keyboardKeys.forEach((keyboardKey) => {
-      handleLanguage(keyboardKey);
-    });
-  } else if (e.code === 'CapsLock') {
-    if (!isCaps) {
-      isCaps = true;
-      handleCaps();
-    } else {
-      isCaps = false;
-      handleCaps();
+    const isFunctional = Boolean(pressedButton.querySelector('.functional'));
+    if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+      isShift = true;
+      handleShift('shift');
+    } else if (e.ctrlKey && e.altKey) {
+      toggleLanguage();
+      const keyboardKeys = document.querySelectorAll('.keyboard-key');
+      keyboardKeys.forEach((keyboardKey) => {
+        handleLanguage(keyboardKey);
+      });
+    } else if (e.code === 'CapsLock') {
+      if (!isCaps) {
+        isCaps = true;
+        handleCaps();
+      } else {
+        isCaps = false;
+        handleCaps();
+      }
+    } else if (!isFunctional) {
+      insertChar(pressedButton);
+      textArea.dispatchEvent(textAreaInputEvent);
+    } else if (e.code === 'Enter') {
+      textArea.value = insertSubstringIntoString('\n', textArea.value, cursorPosition);
+      textArea.dispatchEvent(textAreaInputEvent);
+    } else if (e.code === 'Tab') {
+      textArea.value = insertSubstringIntoString('\t', textArea.value, cursorPosition);
+      textArea.dispatchEvent(textAreaInputEvent);
+    } else if (e.code === 'Space') {
+      textArea.value = insertSubstringIntoString(' ', textArea.value, cursorPosition);
+      textArea.dispatchEvent(textAreaInputEvent);
     }
-  } else if (!isFunctional) {
-    insertChar(pressedButton);
-  } else if (e.code === 'Enter') {
-    textArea.value += '\n';
-  } else if (e.code === 'Tab') {
-    textArea.value += '\t';
-  } else if (e.code === 'Space') {
-    textArea.value += ' ';
   }
 }
 
@@ -1352,3 +1363,26 @@ document.addEventListener('keyup', keyupHandler);
 window.onunload = () => {
   saveLanguage();
 };
+
+textArea.onfocus = () => {
+  setTimeout(() => {
+    cursorPosition = textArea.selectionStart;
+  });
+};
+
+textArea.onblur = () => {
+  setTimeout(() => {
+    cursorPosition = textArea.selectionStart;
+  });
+};
+
+textArea.addEventListener('textAreaInput', () => {
+  cursorPosition += 1;
+  textArea.selectionStart = cursorPosition;
+  textArea.selectionEnd = cursorPosition;
+});
+
+textArea.onclick = () => {
+  cursorPosition = textArea.selectionStart;
+  textArea.selectionEnd = cursorPosition;
+}
