@@ -1414,8 +1414,8 @@ function handleKeyboardUp(e) {
   }
 }
 
-keyboard.addEventListener('mousedown', handleKeyboardDown);
-keyboard.addEventListener('mouseup', handleKeyboardUp);
+document.addEventListener('mousedown', handleKeyboardDown);
+document.addEventListener('mouseup', handleKeyboardUp);
 
 window.onunload = () => {
   saveLanguage();
