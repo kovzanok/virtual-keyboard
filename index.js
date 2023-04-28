@@ -1196,6 +1196,7 @@ class Renderer {
 
   static renderTextArea() {
     const textArea = document.createElement('textarea');
+    textArea.autofocus = true;
     textArea.className = 'textarea';
     textArea.cols = 30;
     textArea.rows = 10;
@@ -1432,6 +1433,7 @@ textArea.onfocus = () => {
 
 textArea.onblur = () => {
   setTimeout(() => {
+    textArea.focus();
     cursorPosition = textArea.selectionStart;
   });
 };
