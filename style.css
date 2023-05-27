@@ -1,0 +1,158 @@
+html {
+  font-size: 10px;
+  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-image: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 400;
+}
+
+.textarea {
+  width: 1000px;
+  height: 200px;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  resize: none;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgb(36, 35, 35);
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  row-gap: 15px;
+  background-color: rgb(36, 35, 35);
+  border: 5px solid black;
+  border-radius: 25px;
+  padding: 20px;
+  user-select: none;
+}
+
+.info {
+  border-radius: 10px;
+  font-size: 2rem;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  color: white;
+}
+
+.info > * {
+  text-align: center;
+  margin: 0;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 5px;
+}
+
+.keyboard-key {
+  min-width: 50px;
+  width: fit-content;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 0px 2px rgba(255, 0, 0, 0.82);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.keyboard-key:hover {
+  background-color: rgb(36, 35, 35);
+}
+
+.Backspace {
+  width: 130px;
+  border-radius: 25px;
+}
+
+.Tab {
+  width: 100px;
+  border-radius: 25px;
+}
+
+.Delete {
+  width: 100px;
+  border-radius: 25px;
+}
+
+.CapsLock {
+  width: 130px;
+  border-radius: 25px;
+}
+
+.Enter {
+  width: 150px;
+  border-radius: 25px;
+}
+
+.ShiftLeft,
+.ShiftRight {
+  border-radius: 25px;
+}
+
+.ShiftLeft {
+  width: 130px;
+}
+
+.ArrowUp {
+  border-radius: 25px 25px 0 0;
+}
+
+.ArrowDown {
+  border-radius: 0 0 25px 25px;
+}
+
+.ShiftRight {
+  width: 160px;
+}
+
+.ControlRight,
+.ControlLeft {
+  width: 100px;
+  border-radius: 25px;
+}
+
+.Space {
+  width: 410px;
+  border-radius: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.pressed {
+  background-color: black!important;
+  box-shadow: 0px 0px 0px 4px black;
+}
